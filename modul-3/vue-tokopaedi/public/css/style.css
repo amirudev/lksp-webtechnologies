@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Nunito';
+    src: local('Nunito') url('/fonts/Nunito-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: Nunito, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tokopayuli-bg-green {
+    background-color: rgb(30, 186, 32);
+}
+
+.tokopayuli-color-green {
+    color: rgb(30, 186, 32);
+}
+
+.tokopayuli-border-green {
+    border-color: rgb(30, 186, 32);
+}
+
+.slideshow-control {
+    opacity: 0;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.slideshow-control:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#slideshow-banner-image {
+    border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 767px){
+    #footer-subscribe-form input {
+        width: 150px!important;
+    }
+
+    #section-first-slideshow div {
+        height: 200px!important;
+    }
+
+    #article-products div {
+        height: 225px!important;
+        width: 150px!important;
+    }
+
+    #article-products div img {
+        height: 135px!important;
+        width: 125px!important;
+    }
+
+    #article-products .product-description {
+        margin: 6px;
+    }
+
+    #article-banner {
+        height: 200px!important;
+    }
+
+    #footer-storeinformation {
+        max-width: 100%!important;
+    }
+}
+
+@media only screen and (max-width: 1023px){
+    #footer-storeinformation {
+        max-width: 100%!important;
+        margin: 0 auto 20px;
+    }
+}
