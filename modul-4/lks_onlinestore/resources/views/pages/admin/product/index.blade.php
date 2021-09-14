@@ -25,20 +25,31 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Kode Transaksi</th>
-                  <th>Tanggal</th>
+                  <th>ID</th>
+                  <th>Nama Produk</th>
+                  <th>Kategori</th>
+                  <th>Deskripsi</th>
+                  <th>Harga</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($transactions as $transaction)
+                    @foreach ($products as $product)
                     <tr>
-                      <td>{{ $transaction->kode_transaksi }}</td>
-                      <td>{{ $transaction->tanggal }}</td>
+                        <td>{{ $product->id }}</td>
+                      <td>{{ $product->nama_produk }}</td>
+                      <td>{{ $product->nama_kategori }}</td>
+                      <td>{{ substr($product->deskripsi, 0, 100) }}</td>
+                      <td>{{ $product->harga }}</td>
                       <td>
-                          <a href="/product/summary/{{ $transaction->kode_transaksi }}">
-                              <button class="btn btn-success">Buka Invoice</button>
-                          </a>
+                          <div class="d-flex">
+                              <a class="mx-1" href="/product/{{ $product->id }}">
+                                  <button class="btn btn-success">Lihat</button>
+                              </a>
+                              <a class="mx-1" href="/admin/product/hapus/{{ $product->id }}">
+                                <button class="btn btn-danger">Hapus</button>
+                            </a>
+                          </div>
                       </td>
                     </tr>
                     @endforeach

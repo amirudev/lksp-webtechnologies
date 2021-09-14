@@ -15,7 +15,7 @@ class AddForeignKeyProduk extends Migration
     {
         // Foreign key produk
         Schema::table('produk', function(Blueprint $table){
-            $table->foreign('kategori_id')->references('id')->on('kategori');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onDelete('cascade');
         });
     }
 

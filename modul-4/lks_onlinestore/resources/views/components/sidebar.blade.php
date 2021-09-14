@@ -33,7 +33,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
-              <a href="#" class="nav-link">
+              <a href="/admin" class="nav-link">
                 <i class="nav-icon fas fa-archive"></i>
                 <p>
                   Produk
@@ -42,7 +42,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/product" class="nav-link">
+                  <a href="/admin/product" class="nav-link">
                     <i class="fas fa-list nav-icon"></i>
                     <p>Daftar Produk</p>
                   </a>
@@ -50,9 +50,17 @@
               </ul>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="/product/tambah" class="nav-link">
+                  <a href="/admin/product/tambah" class="nav-link">
                     <i class="fas fa-plus nav-icon"></i>
                     <p>Tambah Produk</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/admin/product/tambah-kategori" class="nav-link">
+                    <i class="fas fa-plus nav-icon"></i>
+                    <p>Tambah Kategori</p>
                   </a>
                 </li>
               </ul>

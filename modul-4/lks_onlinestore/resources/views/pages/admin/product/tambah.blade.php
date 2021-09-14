@@ -24,7 +24,7 @@
               </button>
           </div>
       @endforeach
-      <form action="/product/tambah" method="POST">
+      <form action="/admin/product/tambah" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="inputName">Nama Produk</label>
@@ -49,9 +49,6 @@
         </div>
         <div class="form-group">
           <label for="inputProjectLeader">Gambar</label>
-          <div class="">
-              <div class="bg-light mx-auto mb-4" style="height: 200px; width: 200px">
-          </div>
           <input type="file" id="inputProjectLeader" class="form-control" name="gambar">
         </div>
       </div>

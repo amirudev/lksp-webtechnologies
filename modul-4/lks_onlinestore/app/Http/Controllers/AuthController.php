@@ -72,7 +72,7 @@ class AuthController extends Controller
         ]);
 
         if(Auth::guard('customer')->attempt($credentials)){
-            return redirect('/admin');
+            return redirect('/');
         } else {
             return back()->withErrors([
                 'email' => 'Email / Password tidak ditemukan'
@@ -105,7 +105,7 @@ class AuthController extends Controller
             return back();
         } else {
             if(Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])){
-                return redirect('/admin');
+                return redirect('/');
             } else {
                 return back()->withErrors([
                     'email' => 'Akun gagal dibuat'

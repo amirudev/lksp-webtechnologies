@@ -15,7 +15,8 @@ class AddForeignKeyTransaksiDetail extends Migration
     {
         // Foreign key transaksi detail
         Schema::table('transaksi_detail', function(Blueprint $table){
-            $table->foreign('transaksi_id')->references('id')->on('transaksi');
+            $table->foreign('produk_id')->references('id')->on('produk')->onDelete('cascade');
+            $table->foreign('transaksi_id')->references('id')->on('transaksi')->onDelete('cascade');
         });
     }
 

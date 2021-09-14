@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layout-customer')
 @section('content')
 <div class="card card-solid">
     <div class="card-body">
@@ -6,8 +6,7 @@
         <div class="col-12 col-sm-6">
           <h3 class="d-inline-block d-sm-none mb-3">{{ $product->nama_produk }}</h3>
           <div class="col-12">
-            {{-- <img src="../../dist/img/prod-1.jpg" class="product-image" alt="Product Image"> --}}
-            <div class="bg-light" style="width: 100%; height: 50vh;"></div>
+            <img src="/uploads/{{ $product->gambar }}" alt="{{ $product->nama_produk }}" style="width: 100%; height: 50vh; object-fit: contain;">
           </div>
         </div>
         <div class="col-12 col-sm-6">

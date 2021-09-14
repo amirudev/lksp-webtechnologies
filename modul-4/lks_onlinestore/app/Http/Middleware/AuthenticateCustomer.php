@@ -19,6 +19,8 @@ class AuthenticateCustomer
     {
         if(Auth::guard('customer')->check()){
             return $next($request);
+        } else {
+            return redirect('/login');
         }
     }
 }

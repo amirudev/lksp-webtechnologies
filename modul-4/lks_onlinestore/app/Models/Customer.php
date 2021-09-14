@@ -18,6 +18,8 @@ class Customer extends Authenticatable
     protected $table = 'customer';
     public $timestamps = false;
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'nama_lengkap', 'no_hp', 'alamat_lengkap', 'email'
     ];
@@ -25,4 +27,5 @@ class Customer extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
 }

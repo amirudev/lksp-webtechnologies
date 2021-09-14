@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::prefix('admin')->group(function() {
             Route::get('/', [ProductAdminController::class, 'index']);
             Route::get('tambah', [ProductAdminController::class, 'tambah']);
             Route::post('tambah', [ProductAdminController::class, 'create']);
+            Route::get('tambah-kategori', [ProductAdminController::class, 'tambahKategori']);
+            Route::post('tambah-kategori', [ProductAdminController::class, 'createKategori']);
+            Route::get('/hapus/{product_id}', [ProductAdminController::class, 'delete']);
         });
     });
 });
@@ -49,6 +53,13 @@ Route::prefix('product')->group(function() {
     Route::get('/', [ProductController::class, 'index']);
     Route::get('add/{product_id}', [ProductController::class, 'add']);
     Route::get('cart', [ProductController::class, 'cart']);
-    Route::get('checkout', [ProductController::class, 'checkout']);
-    Route::get('show/{product_id}', [ProductController::class, 'show']);
+    Route::get('deletecart', [ProductController::class, 'deletecart']);
+    
+    Route::group(['middleware' => 'customer'], function(){
+        Route::get('history', [ProductController::class, 'history']);
+        Route::get('checkout', [ProductController::class, 'checkout']);
+        Route::get('summary/INV/{kode_transaksi}', [ProductController::class, 'summary']);
+    });
+
+    Route::get('{product_id}', [ProductController::class, 'show']);
 });

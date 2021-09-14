@@ -21,7 +21,7 @@ class AuthenticateAdmin
         if(Auth::guard('admin')->check()){
             return $next($request);
         } else {
-            return redirect('login');
+            return redirect('admin/login');
         }
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layout-customer')
 @section('content')
         <!-- Main content -->
         <section class="content">
@@ -43,7 +43,7 @@
                                 {{ $product->id }}
                             </td>
                             <td>
-                                <div class="bg-light" style="width: 100px; height: 100px;"></div>
+                                <img src="/uploads/{{ $product->gambar }}" alt="{{ $product->nama_produk }}" style="width: 100px; height: 100px; object-fit: cover;">
                             </td>
                             <td>
                                 <a>
@@ -61,10 +61,17 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-end m-4">
-                    <a href="/product/checkout">
-                        <button class="btn btn-success">Checkout</button>
-                    </a>
+                <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end mx-1 my-2">
+                        <a href="/product/deletecart">
+                            <button class="btn btn-danger">Hapus Keranjang</button>
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-end mx-1 my-2">
+                        <a href="/product/checkout">
+                            <button class="btn btn-success">Checkout</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

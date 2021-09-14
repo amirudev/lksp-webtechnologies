@@ -15,7 +15,7 @@ class AddForeignKeyTransaksi extends Migration
     {
         // Foreign key produk
         Schema::table('transaksi', function(Blueprint $table){
-            $table->foreign('customer_id')->references('id')->on('customer');
+            $table->foreign('customer_id')->references('id')->on('customer')->onDelete('cascade');
         });
     }
 
